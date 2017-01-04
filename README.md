@@ -1,7 +1,5 @@
 # TinyAnalytics
 
-![]()
-
 **TinyAnalytics** is a lightweight web analytics tool based on the idea that:
 
 * The two most useful things are: **number of unique visitors per day** (with a nice chart) and **list of referers**,
@@ -18,29 +16,29 @@ After years, I've noticed that **I prefer to have few (important) informations t
 
 There are four easy steps. (I could have made an installer script that does everything out-of-the box, but doing it manually is a good way to see exactly what happens).
 
-1) Unzip this package in a directory, e.g. `/home/www/analytics/`
+1) Unzip this package in a directory, e.g. `/var/www/TinyAnalytics/`
 
 2) Go in this directory and give the appropriate permissions:
 
     chown -R www-data:www-data .
     chmod -R 755 .
 
-3) Add the following tracking code to your websites at then end of `.php` files, e.g. `/home/www/mywebsite/index.php`:
+3) Add the following tracking code to your websites at then end of `.php` files, e.g. `/var/www/mywebsite/index.php`:
 
     <?php 
-    require '/home/www/analytics/tracker.php';
+    require '/var/www/TinyAnalytics/tracker.php';
     record_visit('mywebsite');
     ?>
 
 4) Add this to Cron tab with `crontab -e`:
 
-    0 * * * * /home/www/analytics/summarize.py
+    0 * * * * /var/www/TinyAnalytics/summarize.py
 
     Analytics data will be refreshed every 1 hour. 
 
-5) Modify your password in line 2 of `index.php`. Default is `abcdef`.    
+(Optional) Modify your password in line 2 of `index.php`. Default password is `abcdef`.    
 
-It's done! Visit at least one of your tracked websites, run `/home/www/analytics/summarize.py` manually (or wait one hour), and open `index.php` in your browser!
+It's done! Visit at least one of your tracked websites, run `/var/www/TinyAnalytics/summarize.py` manually (this will be needed just once, then it will be done automatically every hour), and open `index.php` in your browser!
 
 ## Todo
 

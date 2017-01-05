@@ -14,14 +14,15 @@ if ($_POST['pass'] === $PASSWORD)
 }
 if (!isset($_SESSION['logged']) || !$_SESSION['logged'] == 1)
 {
-    echo '<form action="." method="post"><input type="password" name="pass" value=""><input type="submit" value="Submit"></form>';
+    echo '<html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body><form action="." method="post"><input type="password" name="pass" value="" autofocus><input type="submit" value="Submit"></form></body></html>';
     exit();
 }
 ?>
 
 <html>
 <head>
-<title></title>
+<title>TinyAnalytics</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    
 <style type="text/css">
 * { padding: 0; margin: 0; outline: 0; font-family: sans-serif; }
 html { padding: 10px; }

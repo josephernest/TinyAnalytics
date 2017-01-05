@@ -1,5 +1,8 @@
 <?php
-$PASSWORD = 'abcdef';     // change your password here
+if (file_exists('config.php'))
+    include 'config.php';
+else    
+    $PASSWORD = 'abcdef';     // change your password here or create a config.php file containing $PASSWORD
 
 session_start();
 if ($_GET['action'] === 'logout')

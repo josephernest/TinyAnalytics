@@ -4,6 +4,7 @@ if (file_exists('config.php'))
 else    
     $PASSWORD = 'abcdef';     // change your password here or create a config.php file: <?php $PASSWORD = '...';
 
+session_set_cookie_params(0, dirname($_SERVER['SCRIPT_NAME']));
 session_start();
 if ($_GET['action'] === 'logout')
 {

@@ -1,5 +1,7 @@
 # TinyAnalytics
 
+![](http://gget.it/27cgzhtl/TinyAnalytics.png)
+
 **TinyAnalytics** is a lightweight web analytics tool based on the idea that:
 
 * The two most useful things are: **number of unique visitors per day** (with a nice chart) and **list of referers**,

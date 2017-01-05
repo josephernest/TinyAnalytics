@@ -5,14 +5,12 @@ session_start();
 if ($_GET['action'] === 'logout')
 {
     $_SESSION['logged'] = 0;
-    $home = str_replace($_SERVER['SCRIPT_NAME'], 'index.php', '');
-    header('Location: ' . $home);    
+    header('Location: .');   // reload page to prevent ?action=logout to stay
 }
 if ($_POST['pass'] === $PASSWORD)
 {
     $_SESSION['logged'] = 1;
-    $home = str_replace($_SERVER['SCRIPT_NAME'], 'index.php', '');
-    header('Location: ' . $home);
+    header('Location: .');   // reload page to prevent form resubmission popup when refreshing / this works even if no .htaccess RewriteRule 
 }
 if (!isset($_SESSION['logged']) || !$_SESSION['logged'] == 1)
 {

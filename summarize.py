@@ -41,8 +41,11 @@ for logfile in glob.glob('logs/*.log'):
         for row in csv.reader(inp, delimiter='\t'):
             rowdate = row[0]
             ip = row[2]
-
-            #useragents.add(row[4])
+            ua = row[4]            
+            #useragents.add(ua)            
+            
+            if any(excl in ua for excl in ['bot', 'crawl', 'slurp', 'spider', 'yandex']):                
+                continue            
 
             if len(row) > 5:
                 referer = row[5]

@@ -30,7 +30,8 @@ html { padding: 10px; }
 .referers a { text-decoration: none; }
 .site { padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px solid #eee; }
 .site h1 { margin-bottom: 0px; }
-#chart_div { width: 50%; }
+.code { background-color: #f4f4f4; font-family: monospace; padding: 3px; }
+pre { margin-bottom: 10px; }
 #footer { margin-top: 80px; color: #333; font-size: 0.8em; }
 #footer a { color: #333; }
 @media (max-width: 600px) { .referers { display: none; } .chart { width: 100%; } }

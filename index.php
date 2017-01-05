@@ -3,9 +3,15 @@ $PASSWORD = 'abcdef';     // change your password here
 
 session_start();
 if ($_GET['action'] === 'logout')
+{
     $_SESSION['logged'] = 0;
+    header('Location: ' . $_SERVER['PHP_SELF']);    
+}
 if ($_POST['pass'] === $PASSWORD)
+{
     $_SESSION['logged'] = 1;
+    header('Location: ' . $_SERVER['PHP_SELF']);    
+}
 if (!isset($_SESSION['logged']) || !$_SESSION['logged'] == 1)
 {
     echo '<form action="." method="post"><input type="password" name="pass" value=""><input type="submit" value="Submit"></form>';

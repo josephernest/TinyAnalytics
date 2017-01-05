@@ -30,8 +30,8 @@ if (!isset($_SESSION['logged']) || !$_SESSION['logged'] == 1)
 <style type="text/css">
 * { padding: 0; margin: 0; outline: 0; font-family: sans-serif; }
 html { padding: 10px; }
-.chart { width: 48%; height: 160px; }
-.referers { height: 190px; overflow-y: auto; width: 48%; float: right; font-size: 0.8em; }
+.chart { width: 51%; height: 160px; }
+.referers { height: 190px; overflow-y: auto; width: 45%; float: right; font-size: 0.8em; white-space: nowrap; overflow-x: hidden; }
 .referers a { text-decoration: none; }
 .site { padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px solid #eee; }
 .site h1 { margin-bottom: 0px; }

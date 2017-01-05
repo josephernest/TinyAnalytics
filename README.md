@@ -23,7 +23,6 @@ There are five easy steps. *(I could have made an installer script that does eve
 2) Give the appropriate permissions:
 
     chmod 777 logs/
-    chmod 755 summarize.py
 
 3) Add the following tracking code to your websites at then end of `.php` files, e.g. `/var/www/mywebsite/index.php`:
 

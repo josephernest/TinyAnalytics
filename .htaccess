@@ -1,4 +1,2 @@
-Deny From All
-<FilesMatch "^index\.php$">
-Allow From All
-</FilesMatch>
+RewriteEngine On
+RewriteRule ^(.*)$ index.php 

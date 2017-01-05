@@ -5,12 +5,14 @@ session_start();
 if ($_GET['action'] === 'logout')
 {
     $_SESSION['logged'] = 0;
-    header('Location: ' . $_SERVER['PHP_SELF']);    
+    $home = str_replace($_SERVER['SCRIPT_NAME'], 'index.php', '');
+    header('Location: ' . $home);    
 }
 if ($_POST['pass'] === $PASSWORD)
 {
     $_SESSION['logged'] = 1;
-    header('Location: ' . $_SERVER['PHP_SELF']);    
+    $home = str_replace($_SERVER['SCRIPT_NAME'], 'index.php', '');
+    header('Location: ' . $home);
 }
 if (!isset($_SESSION['logged']) || !$_SESSION['logged'] == 1)
 {

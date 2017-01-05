@@ -26,7 +26,8 @@ if (!isset($_SESSION['logged']) || !$_SESSION['logged'] == 1)
 <html>
 <head>
 <title>TinyAnalytics</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">    
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<link rel="icon" href="favicon.ico">
 <style type="text/css">
 * { padding: 0; margin: 0; outline: 0; font-family: sans-serif; }
 html { padding: 10px; }

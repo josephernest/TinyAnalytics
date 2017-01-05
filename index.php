@@ -72,6 +72,7 @@ foreach ($sites as $site)
         . '<div class="chart" data="' . substr($points, 0, -1) . '"></div>' . PHP_EOL
         . '</div>' . PHP_EOL . PHP_EOL;
 }
+if (count($sites) == 0) echo "<p>No analytics data yet. Add this tracking code in your website's main PHP file:</p><pre class=\"code\">&lt;?php\nrequire '" . realpath(dirname(__FILE__)) . "/tracker.php';\nrecord_visit('mywebsite');\n?&gt;</pre>Check the folder permissions as explained <a href=\"https://github.com/josephernest/TinyAnalytics#install\">here</a>, and run <span class=\"code\">./summarize.py</span>.";
 ?>
 
 <div id="footer">Powered by <a href="https://github.com/josephernest/TinyAnalytics">TinyAnalytics</a>. <a href="?action=logout">Log out</a>.</div>

@@ -1,10 +1,10 @@
 # TinyAnalytics
 
-![](http://gget.it/27cgzhtl/TinyAnalytics.png)
+<img src="http://gget.it/27cgzhtl/TinyAnalytics.png" width="900"/>
 
 **TinyAnalytics** is a lightweight web analytics tool based on the idea that:
 
-* The two most useful things are: **number of unique visitors per day** (with a nice chart) and **list of referers**,
+* The two most useful things are: **number of unique visitors per day** (with a nice chart) and **list of referers** who send some traffic to your websites,
 
 * It should give the idea of the traffic **in one single page**, even for multiple websites (without having to click in lots of menu items to change the currently displayed website, etc.),
 

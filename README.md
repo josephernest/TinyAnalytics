@@ -16,7 +16,7 @@ If you're looking for more informations than those (such as country, browser, sc
 
 ## Install
 
-There are four easy steps. (I could have made an installer script that does everything out-of-the box, but doing it manually is a good way to see exactly what happens).
+There are five easy steps. *(I could have made an installer script that does everything out-of-the box, but doing it manually is a good way to see exactly what happens)*.
 
 1) Unzip this package in a directory, e.g. `/var/www/TinyAnalytics/`.
 
@@ -36,7 +36,7 @@ There are four easy steps. (I could have made an installer script that does ever
 
     0 * * * * /var/www/TinyAnalytics/summarize.py
 
-(Optional) Modify your password in line 2 of `index.php`. Default password is `abcdef`.    
+5) Modify your password in line 5 of `index.php`. Default password is `abcdef`.    
 
 It's done! Visit at least one of your tracked websites, run `./summarize.py` manually (this will be needed just once, then it will be done automatically every hour), and open `index.php` in your browser!
 

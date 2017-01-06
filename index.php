@@ -21,6 +21,10 @@ if (!isset($_SESSION['logged']) || !$_SESSION['logged'] == 1)
     echo '<html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>TinyAnalytics</title><link rel="icon" href="favicon.ico"></head><body><form action="." method="post"><input type="password" name="pass" value="" autofocus><input type="submit" value="Submit"></form></body></html>';
     exit();
 }
+
+shell_exec('./summarize.py >/dev/null 2>&1 &');  // todo: do this only if timestamp is older than 1 hour / todo: do the same in tracker.php
+usleep(250000); // check if .py finished? message? something else?
+// todo: add timestamp 
 ?>
 
 <html>
@@ -36,9 +40,10 @@ html { padding: 10px; }
 .referers a { text-decoration: none; }
 .site { padding-bottom: 30px; margin-bottom: 30px; border-bottom: 1px solid #eee; }
 .site h1 { margin-bottom: 0px; }
+p.warning { margin-bottom: 10px; }
 .code { background-color: #f4f4f4; font-family: monospace; padding: 3px; }
 pre { margin-bottom: 10px; }
-#footer { margin-top: 80px; color: #333; font-size: 0.8em; }
+#footer { margin-top: 80px; color: #333; font-size: 0.8em; position: fixed; bottom: 10px; }
 #footer a { color: #333; }
 @media (max-width: 600px) { .referers { display: none; } .chart { width: 100%; } }
 </style>
@@ -47,6 +52,10 @@ pre { margin-bottom: 10px; }
 <body>
 <?php     
 $sites = glob("./logs/*.visitors", GLOB_BRACE);
+
+if (!is_writable(realpath(dirname(__FILE__)))) echo '<p class="warning">&#8226; TinyAnalytics currently can\'t write data. Please give the write permissions to TinyAnalytics with:</p><pre class="code">chown -R ' . exec('whoami') . ' ' . realpath(dirname(__FILE__)) . '</pre>';
+if (count($sites) == 0) echo "<p class=\"warning\">&#8226; No analytics data yet. Add this tracking code in your website's main PHP file, and then visit it at least once.</p><pre class=\"code\">&lt;?php\ninclude '" . realpath(dirname(__FILE__)) . "/tracker.php';\nrecord_visit('mywebsite');\n?&gt;</pre>";
+
 foreach ($sites as $site)
 {
     $sitename = basename($site, '.visitors');
@@ -79,7 +88,6 @@ foreach ($sites as $site)
         . '<div class="chart" data="' . substr($points, 0, -1) . '"></div>' . PHP_EOL
         . '</div>' . PHP_EOL . PHP_EOL;
 }
-if (count($sites) == 0) echo "<p>No analytics data yet. Add this tracking code in your website's main PHP file:</p><pre class=\"code\">&lt;?php\nrequire '" . realpath(dirname(__FILE__)) . "/tracker.php';\nrecord_visit('mywebsite');\n?&gt;</pre>Check the folder permissions as explained <a href=\"https://github.com/josephernest/TinyAnalytics#install\">here</a>, and run <span class=\"code\">./summarize.py</span>.";
 ?>
 
 <div id="footer">Powered by <a href="https://github.com/josephernest/TinyAnalytics">TinyAnalytics</a>. <a href="?action=logout">Log out</a>.</div>

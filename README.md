@@ -23,7 +23,7 @@ There are three easy steps:
 2) Add the following tracking code to your websites at then end of `.php` files, e.g. `/var/www/mywebsite/index.php`:
 
     <?php 
-    require '/var/www/TinyAnalytics/tracker.php';
+    include '/var/www/TinyAnalytics/tracker.php';
     record_visit('mywebsite');
     ?>
 

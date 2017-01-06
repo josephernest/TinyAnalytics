@@ -41,7 +41,7 @@ It's done! Visit at least one of your tracked websites, run `./summarize.py` man
 
 ## To do
 
-A version with an even simpler install process is currently in test [here]((https://github.com/josephernest/TinyAnalytics/tree/without-cron).
+A version with an even simpler install process is currently in test [here](https://github.com/josephernest/TinyAnalytics/tree/without-cron).
 
 ## About
 

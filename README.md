@@ -41,11 +41,17 @@ It's done! Visit at least one of your tracked websites, run `./summarize.py` man
 
 ## Todo
 
-* Filter bots with user agents
+* (a) Filter bots with user agents (done in this [file](https://github.com/josephernest/TinyAnalytics/blob/master/summarize.py) but can be improved)
 
-* (Maybe but only if same user experience) Replace Google Charts JavaScript code by another open-source chart-generating JavaScript library
+* (b) (Maybe but only if same user experience) Replace Google Charts JavaScript code by another open-source chart-generating JavaScript library
 
-* Some websites don't expose referer, [is there a way](https://stackoverflow.com/q/41466351/1422096) to solve this? 
+* (c) Some websites don't expose referer, [is there a way](https://stackoverflow.com/q/41466351/1422096) to solve this? 
+
+* (d) Don't use cron, but write a timestamp each time `tracker.php` and `index.php` are called. If now - last timestamp > 1 hour, then run `shell_exec('summarize.py >/dev/null 2>&1 &');`
+
+* (e) Can we have `git clone ...` (or unzip the package) give the good permissions already? (we just need that PHP can write in `logs/`). This would avoid install step 2 (permissions).
+
+* (f) (Optional) Rewrite `summarize.py` into PHP, and do a PHP-only version of TinyAnalytics (I do enjoy Python, it's the language that I use the most, but a PHP-only version would allow people with a shared hosting to install it).
 
 ## About
 

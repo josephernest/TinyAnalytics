@@ -16,28 +16,20 @@ If you're looking for more informations than those (such as country, browser, sc
 
 ## Install
 
-There are five easy steps. *(I could have made an installer script that does everything out-of-the box, but doing it manually is a good way to see exactly what happens)*.
+There are three easy steps:
 
 1) Unzip this package in a directory, e.g. `/var/www/TinyAnalytics/`.
 
-2) Give the appropriate permissions:
-
-    chmod 777 logs/
-
-3) Add the following tracking code to your websites at then end of `.php` files, e.g. `/var/www/mywebsite/index.php`:
+2) Add the following tracking code to your websites at then end of `.php` files, e.g. `/var/www/mywebsite/index.php`:
 
     <?php 
     require '/var/www/TinyAnalytics/tracker.php';
     record_visit('mywebsite');
     ?>
 
-4) Add this with `crontab -e`, to refresh analytics data every 1 hour:
+3) Modify your password in line 5 of `index.php`. Default password is `abcdef`.    
 
-    0 * * * * /var/www/TinyAnalytics/summarize.py
-
-5) Modify your password in line 5 of `index.php`. Default password is `abcdef`.    
-
-It's done! Visit at least one of your tracked websites, run `./summarize.py` manually (this will be needed just once, then it will be done automatically every hour), and open `index.php` in your browser!
+It's done! Visit at least one of your tracked websites, and open `TinyAnalytics/index.php` in your browser!
 
 ## About
 

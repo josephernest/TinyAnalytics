@@ -33,8 +33,8 @@ usleep(250000); // check if .py finished? message? something else?
 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="icon" href="favicon.ico">
 <style type="text/css">
-* { padding: 0; margin: 0; outline: 0; font-family: sans-serif; }
-html { padding: 10px; }
+* { border: 0; outline: 0; padding: 0; margin: 0; font-family: sans-serif; }
+html { position: relative; min-height: 100%; }
 .chart { width: 51%; height: 160px; }
 .referers { height: 190px; overflow-y: auto; width: 45%; float: right; font-size: 0.8em; white-space: nowrap; overflow-x: hidden; }
 .referers a { text-decoration: none; }
@@ -43,13 +43,15 @@ html { padding: 10px; }
 p.warning { margin-bottom: 10px; }
 .code { background-color: #f4f4f4; font-family: monospace; padding: 3px; }
 pre { margin-bottom: 10px; }
-#footer { margin-top: 80px; color: #333; font-size: 0.8em; position: fixed; bottom: 10px; }
+#content { padding: 10px 10px 60px 10px; }
+#footer { margin-top: 80px; color: #333; font-size: 0.8em; position: absolute; bottom: 10px; left: 10px; }
 #footer a { color: #333; }
 @media (max-width: 600px) { .referers { display: none; } .chart { width: 100%; } }
 </style>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
+<div id="content">
 <?php     
 $sites = glob("./logs/*.visitors", GLOB_BRACE);
 
@@ -90,7 +92,7 @@ foreach ($sites as $site)
         . '</div>' . PHP_EOL . PHP_EOL;
 }
 ?>
-
+</div>
 <div id="footer">Powered by <a href="https://github.com/josephernest/TinyAnalytics">TinyAnalytics</a>. <a href="?action=logout">Log out</a>.</div>
 
 <script type="text/javascript">

@@ -54,6 +54,7 @@ pre { margin-bottom: 10px; }
 $sites = glob("./logs/*.visitors", GLOB_BRACE);
 
 if (!is_writable(realpath(dirname(__FILE__)))) echo '<p class="warning">&#8226; TinyAnalytics currently can\'t write data. Please give the write permissions to TinyAnalytics with:</p><pre class="code">chown -R ' . exec('whoami') . ' ' . realpath(dirname(__FILE__)) . '</pre>';
+if (!is_executable(realpath(dirname(__FILE__)) . '/summarize.py')) echo '<p class="warning">&#8226; TinyAnalytics currently can\'t process the data. Please give the executable permission to TinyAnalytics with:</p><pre class="code">chmod +x ' . realpath(dirname(__FILE__)) . '/summarize.py' . '</pre>';
 if (count($sites) == 0) echo "<p class=\"warning\">&#8226; No analytics data yet. Add this tracking code in your website's main PHP file, and then visit it at least once.</p><pre class=\"code\">&lt;?php\ninclude '" . realpath(dirname(__FILE__)) . "/tracker.php';\nrecord_visit('mywebsite');\n?&gt;</pre>";
 
 foreach ($sites as $site)

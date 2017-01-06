@@ -24,7 +24,7 @@ if (!isset($_SESSION['logged']) || !$_SESSION['logged'] == 1)
 
 include 'tracker.php';
 if (summarize())
-    usleep(250000);
+    usleep(250000);  // 250 ms should be enough for summarize.py to be finished // this should be better handled
 ?>
 
 <html>

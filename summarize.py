@@ -4,7 +4,7 @@ import csv
 import glob
 import json
 import os, sys
-import datetime
+import time, datetime
 
 os.chdir(sys.path[0])    # cd to the script dir, even if called from cron
 
@@ -73,6 +73,9 @@ for logfile in glob.glob('logs/*.log'):
 
     #with open(useragentsfile, 'w') as outfile:
     #    json.dump(sorted(list(useragents)), outfile, indent=2)
+
+    with open('.lastsummarize', 'w') as outfile:
+        outfile.write(str(int(time.time())))
 
     os.chmod(logfile, 0o666)
     os.chmod(visitorsfile, 0o666)

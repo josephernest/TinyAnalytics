@@ -39,6 +39,10 @@ There are five easy steps. *(I could have made an installer script that does eve
 
 It's done! Visit at least one of your tracked websites, run `./summarize.py` manually (this will be needed just once, then it will be done automatically every hour), and open `index.php` in your browser!
 
+## To do
+
+A version with an even simpler install process is currently in test [here]((https://github.com/josephernest/TinyAnalytics/tree/without-cron).
+
 ## About
 
 Author: Joseph Ernest ([@JosephErnest](https://twitter.com/JosephErnest))

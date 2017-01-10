@@ -57,14 +57,16 @@ $sites = glob("./logs/*.visitors", GLOB_BRACE);
 
 if (!is_writable(realpath(dirname(__FILE__)))) 
     echo '<p class="warning">&#8226; TinyAnalytics currently can\'t write data. Please give the write permissions to TinyAnalytics with:</p><pre class="code">chown -R ' . exec('whoami') . ' ' . realpath(dirname(__FILE__)) . '</pre>';
-
-$summarizepy = realpath(dirname(__FILE__)) . '/summarize.py';
-if (!is_executable($summarizepy))
-{    
-    chmod($summarizepy, 0744);
-    if (!is_executable($summarizepy)) // still not executable
-        echo '<p class="warning">&#8226; TinyAnalytics currently can\'t process the data. Please give the executable permission to TinyAnalytics with:</p><pre class="code">chmod +x ' . $summarizepy . '</pre>';
-}    
+else
+{ 
+    $summarizepy = realpath(dirname(__FILE__)) . '/summarize.py';
+    if (!is_executable($summarizepy))
+    {    
+        chmod($summarizepy, 0744);
+        if (!is_executable($summarizepy)) // still not executable
+            echo '<p class="warning">&#8226; TinyAnalytics currently can\'t process the data. Please give the executable permission to TinyAnalytics with:</p><pre class="code">chmod +x ' . $summarizepy . '</pre>';
+    }    
+}
 if (count($sites) == 0) 
     echo "<p class=\"warning\">&#8226; No analytics data yet. Add this tracking code in your website's main PHP file, and then visit it at least once.</p><pre class=\"code\">&lt;?php\ninclude '" . realpath(dirname(__FILE__)) . "/tracker.php';\nrecord_visit('mywebsite');\n?&gt;</pre>";
 

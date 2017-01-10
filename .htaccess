@@ -1,3 +1,5 @@
 RewriteEngine On
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !favicon\.ico$
-RewriteRule ^(.*)$ index.php 
+RewriteRule ^(.*)$ index.php [L]

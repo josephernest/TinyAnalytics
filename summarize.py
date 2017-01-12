@@ -4,7 +4,7 @@ import csv
 import glob
 import json
 import os, sys
-import datetime
+import time, datetime
 
 os.chdir(sys.path[0])    # cd to the script dir, even if called from cron
 

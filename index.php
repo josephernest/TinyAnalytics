@@ -64,13 +64,11 @@ foreach ($sites as $site)
     $str = file_get_contents($site);
     $visitors = json_decode($str, true);
     $points = '';
-    $max = 0;
     for ($i = 0; $i < 30; $i++) 
     {
         $key = date("Y-m-d", time() - $i * 3600 * 24);
         $y = ((isset($visitors[$key])) ? $visitors[$key] : 0);
         $points .= $y . ',';
-        $max = max($max, $y);
     }
 
     echo '<div class="site">' . PHP_EOL

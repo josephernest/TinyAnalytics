@@ -21,8 +21,13 @@ if (!isset($_SESSION['logged']) || !$_SESSION['logged'] == 1)
     echo '<html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>TinyAnalytics</title><link rel="icon" href="favicon.ico"></head><body><form action="." method="post"><input type="password" name="pass" value="" autofocus><input type="submit" value="Submit"></form></body></html>';
     exit();
 }
-
 include 'tracker.php';
+if ($_GET['action'] === 'summarize')
+{
+    summarize(true);
+    usleep(250000);
+    header('Location: .');
+}
 if (summarize())
     usleep(250000);  // 250 ms should be enough for summarize.py to be finished // this should be better handled
 ?>
@@ -104,7 +109,7 @@ foreach ($sites as $site)
 }
 ?>
 </div>
-<div id="footer">Powered by <a href="https://github.com/josephernest/TinyAnalytics">TinyAnalytics</a>. <a href="?action=logout">Log out</a>.</div>
+<div id="footer">Powered by <a href="https://github.com/josephernest/TinyAnalytics">TinyAnalytics</a>. <a href="?action=summarize">Reprocess data</a>. <a href="?action=logout">Log out</a>.</div>
 
 <script type="text/javascript">
 google.charts.load('current', { callback: function () { drawChart(); window.addEventListener('resize', drawChart, false); },  packages:['corechart'] });

@@ -6,7 +6,7 @@
 
 * The two most useful things are: **number of unique visitors per day** (with a nice chart) and **list of referers** who send some traffic to your websites,
 
-* It should give the idea of the traffic **in one single page**, even for multiple websites (without having to click in lots of menu items to change the currently displayed website, etc.),
+* It should give the idea of the traffic, even for multiple websites **on a single dashboard*** (without having to click in lots of menu items to change the currently displayed website, etc.),
 
 * It should be fast and lightweight.
 

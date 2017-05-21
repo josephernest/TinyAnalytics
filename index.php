@@ -1,4 +1,7 @@
 <?php
+
+error_reporting(E_ALL & ~E_NOTICE);
+
 if (file_exists('config.php'))
     include 'config.php';
 else    

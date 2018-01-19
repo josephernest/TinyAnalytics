@@ -4,7 +4,7 @@ function summarize($force = false)
     $lastsummarize = realpath(dirname(__FILE__)) . '/.lastsummarize';    
     if (!file_exists($lastsummarize) || ((time() - file_get_contents($lastsummarize)) > 3600) || $force)
     {
-        shell_exec(realpath(dirname(__FILE__)) . '/summarize.py >/dev/null 2>&1 &');
+        shell_exec(realpath(dirname(__FILE__)) . '/summarize.php >/dev/null 2>&1 &');
         return true;
     }
     else

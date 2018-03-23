@@ -67,12 +67,12 @@ if (!is_writable(realpath(dirname(__FILE__))))
     echo '<p class="warning">&#8226; TinyAnalytics currently can\'t write data. Please give the write permissions to TinyAnalytics with:</p><pre class="code">chown -R ' . exec('whoami') . ' ' . realpath(dirname(__FILE__)) . '</pre>';
 else
 { 
-    $summarizepy = realpath(dirname(__FILE__)) . '/summarize.py';
-    if (!is_executable($summarizepy))
+    $summarizephp = realpath(dirname(__FILE__)) . '/summarize.php';
+    if (!is_executable($summarizephp))
     {    
-        chmod($summarizepy, 0744);
-        if (!is_executable($summarizepy)) // still not executable
-            echo '<p class="warning">&#8226; TinyAnalytics currently can\'t process the data. Please give the executable permission to TinyAnalytics with:</p><pre class="code">chmod +x ' . $summarizepy . '</pre>';
+        chmod($summarizephp, 0744);
+        if (!is_executable($summarizephp)) // still not executable
+            echo '<p class="warning">&#8226; TinyAnalytics currently can\'t process the data. Please give the executable permission to TinyAnalytics with:</p><pre class="code">chmod +x ' . $summarizephp . '</pre>';
     }    
 }
 if (count($sites) == 0) 

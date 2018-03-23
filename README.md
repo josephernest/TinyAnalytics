@@ -39,6 +39,10 @@ Other projects: [BigPicture](http://bigpicture.bi), [bigpicture.js](https://gith
 
 Thanks to [WhiteHat](http://stackoverflow.com/users/5090771/whitehat) for his help on the chart visualization design.
 
+## Other versions
+
+Here is [PHP-only version](https://github.com/benyafai/TinyAnalytics) contributed by @benyafai.
+
 ## License
 
 MIT license

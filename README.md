@@ -22,12 +22,14 @@ There are three easy steps:
 
 2) Add the following tracking code to your websites at then end of `.php` files, e.g. `/var/www/mywebsite/index.php`:
 
-    <?php 
-    include '/var/www/TinyAnalytics/tracker.php';
-    record_visit('mywebsite');
-    ?>
+  ~~~
+  <?php 
+  include '/var/www/TinyAnalytics/tracker.php';
+  record_visit('mywebsite');
+  ?>
+  ~~~~
 
-3) Modify your password in line 5 of `index.php`. Default password is `abcdef`.    
+3) Modify your password in the first lines of `index.php`. Default password is `abcdef`.    
 
 It's done! Visit at least one of your tracked websites, and open `TinyAnalytics/index.php` in your browser!
 

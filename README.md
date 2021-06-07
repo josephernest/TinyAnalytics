@@ -37,9 +37,17 @@ It's done! Visit at least one of your tracked websites, and open `TinyAnalytics/
 
 Author: Joseph Ernest ([@JosephErnest](https://twitter.com/JosephErnest))
 
-Other projects: [BigPicture](http://bigpicture.bi), [bigpicture.js](https://github.com/josephernest/bigpicture.js), [AReallyBigPage](https://github.com/josephernest/AReallyBigPage), [SamplerBox](http://www.samplerbox.org), [Void](http://www.thisisvoid.org), [TalkTalkTalk](https://github.com/josephernest/TalkTalkTalk), [YellowNoiseAudio](http://www.yellownoiseaudio.com), [bloggggg](https://github.com/josephernest/bloggggg), etc.
+Other projects: [BigPicture](https://bigpictu.re), [bigpicture.js](https://github.com/josephernest/bigpicture.js), [AReallyBigPage](https://github.com/josephernest/AReallyBigPage), [SamplerBox](https://www.samplerbox.org), [Void](http://github.com/josephernest/void), [TalkTalkTalk](https://github.com/josephernest/TalkTalkTalk), [YellowNoiseAudio](https://www.yellownoiseaudio.com), [bloggggg](https://github.com/josephernest/bloggggg), etc.
 
 Thanks to [WhiteHat](http://stackoverflow.com/users/5090771/whitehat) for his help on the chart visualization design.
+
+## Sponsors and consulting
+
+I am available for Python, Data science, ML, Automation consulting. Please contact me on https://afewthingz.com for freelancing requests.
+
+Do you want to support the development of my open-source projects? Please contact me!
+
+I am currently sponsored by [CodeSigningStore.com](https://codesigningstore.com/). Thank you to them for providing a DigiCert Code Signing Certificate and supporting open source software.
 
 ## Other versions
 
